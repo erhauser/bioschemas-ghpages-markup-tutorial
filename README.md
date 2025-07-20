@@ -31,11 +31,11 @@ These GitHub pages include a page describing a [software](./software.md) and a p
 
 <img src="./icons/calendar.svg" width="16" height="16"/> __Published__ 2024-02-05
 
-<img src="./icons/pen-to-square.svg" width="16" height="16"/> __Latest modification__ 2024-09-20
+<img src="./icons/pen-to-square.svg" width="16" height="16"/> __Latest modification__ 2025-07-20
 
 <img src="./icons/scale-balance.svg" width="16" height="16"/> __License__ [CC-By 4.0](https://spdx.org/licenses/CC-BY-4.0)
 
-<img src="./icons/code-compare.svg" width="16" height="16"/> __Version__ 1.1.0
+<img src="./icons/code-compare.svg" width="16" height="16"/> __Version__ Forked from 1.1.0 for the purpose of ACM REP '25
 
 <img src="./icons/fingerprint.svg" width="16" height="16"/> __Identifier__ [DOI:10.5281/zenodo.13799121](https://doi.org/10.5281/zenodo.13799121)
 
@@ -49,6 +49,7 @@ In this tutorial we will cover:
   - [Overview](#overview)
   - [Learning experience](#learning-experience)
     - [Agenda](#agenda)
+    - [What are we aiming for?](#what-are-we-aiming-for)
     - [Creating this GitHub Page](#creating-this-github-page)
     - [Adding schema.org and Bioschemas markup](#adding-schemaorg-and-bioschemas-markup)
       - [Using schema.org types](#using-schemaorg-types)
@@ -61,6 +62,10 @@ In this tutorial we will cover:
     - [Try it out](#try-it-out)
   - [What is next?](#what-is-next)
   - [Acknowledgements](#acknowledgements)
+
+### What are we aiming for?
+
+It may help you to understand the purpose of these activities if we should you what we are aiming to do. We are going to add Bioschemas markup to webpages that have been written about data, software, training materials, or many other kinds of research output. These webpages are hosted on the GitHub Pages platform, but they could be hosted anywhere.   
 
 ### Creating this GitHub Page
 Let's start by forking [this repository](https://github.com/zbmed-semtec/bioschemas-ghpages-markup-tutorial) for your own purposes. Once forked, go to settings
