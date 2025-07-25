@@ -89,10 +89,11 @@ In a matter of minutes, your site will be live. The pages corresponding to the e
 
 ![Published pages](./images/pages-published.png)
 
-Do not forget to get a local copy of your fork so you can make changes. There are several ways to do this:
+Do not forget to get a local copy of your fork so you can make changes, or work in the browser. There are several ways to do this:
 - Clone the repository on the command line with [Git](https://docs.github.com/en/get-started/git-basics/set-up-git)
 - Clone the repository with [GitHub Desktop](https://docs.github.com/en/desktop)
-- Use the [github.dev web-based editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor) (most suitable for Git beginners)
+- Use the [github.dev web-based editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor) 
+- Edit individual files on GitHub.com (most suitable for Git beginners)
 
 ### Adding schema.org and Bioschemas markup
 We will add schema.org and Bioschemas markup corresponding to our example, code (software page) and data (dataset page) for our repo [TREC-doc-2-doc-relevance](https://github.com/zbmed-semtec/TREC-doc-2-doc-relevance). Right now those pages only have text, with the following steps you will get schema.org/Bioschemas markup embedded in your pages. 
