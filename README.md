@@ -10,7 +10,8 @@ These GitHub pages include a page describing a [software](./software.md) and a p
 <img src="./icons/question.svg" width="16" height="16"/> __Questions__
 * How can I add Bioschemas markup to GitHub pages?
 * Can I also use schema.org types not included in Bioschemas?
-* How can I use Bioschemas profiles? In particular [ComputationalTool](https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE) and [Dataset](https://bioschemas.org/profiles/Dataset/1.1-DRAFT) (bonus, we also use [TrainingMaterial](https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE) to describe the tutorial itself)
+* How can I use Bioschemas profiles? In particular [Dataset](https://bioschemas.org/profiles/Dataset/1.1-DRAFT) (bonus, we also use [TrainingMaterial](https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE) to describe the tutorial itself). 
+  * Advanced learners may also use the [ComputationalTool](https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE) profile; see the [original lesson](https://github.com/zbmed-semtec/bioschemas-ghpages-markup-tutorial).
 
 <img src="./icons/bullseye.svg" width="16" height="16"/> __Learning outcomes__
 * Describe how schema.org and Bioschemas markup can be embedded to GitHub pages
@@ -96,16 +97,16 @@ Do not forget to get a local copy of your fork so you can make changes. There ar
 ### Adding schema.org and Bioschemas markup
 We will add schema.org and Bioschemas markup corresponding to our example, code (software page) and data (dataset page) for our repo [TREC-doc-2-doc-relevance](https://github.com/zbmed-semtec/TREC-doc-2-doc-relevance). Right now those pages only have text, with the following steps you will get schema.org/Bioschemas markup embedded in your pages. 
 
-With GitHub pages, same a with regular HTML (static or generated), the trick is adding the JSON-LD describing those elements that you want. To do so, you need to add a block `<script type="application/ld+json">` with the Bioschemas markup as a JSON-LD inside the block.
+With GitHub Pages, same a with regular HTML (static or generated), the trick is adding the JSON-LD describing those elements that you want. To do so, you need to add a block `<script type="application/ld+json">` with the Bioschemas markup as a JSON-LD inside the block.
 
 The Bioschemas markup will start with the context `"@context": "https://schema.org"`, i.e., where all types and profiles are defined.
 
 Then you add the type and id of what you are describing, for instace a `bioschemas:ComputationalTool`. The `"http://purl.org/dc/terms/conformsTo"` is the bit that indicates that you are using Bioschemas.
 
 ```
-  "@type": "SoftwareApplication",
-  "@id": "https://doi.org/10.5281/zenodo.7341391",
-  "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE",
+    "@type": "Dataset", 
+    "@id": "https://doi.org/10.5281/zenodo.7338056",
+    "conformsTo": "https://bioschemas.org/profiles/Dataset/1.0-RELEASE"
 ```
 
 For the rest of the markup, you need to see what the Bioschemas profile recommends ([keep reading, more information below](#using-bioschemas-profiles)).
@@ -114,89 +115,16 @@ To get the markup added to your pages, copy the content of [software](./software
 
 Have a look to the pages that you just created on your own GitHub pages, one for the [code and corresponding release](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software), another for a [dataset created from data collected by the software](https://zphilreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset). To see them working for your repo (that will now have the schemas.org/Bioschemas markup), you need to use `<your_user>/<your_repo>` instead of `philreeddata.github.io/bioschemas-ghpages-markup-tutorial` on the html link `https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset`.
 
-The [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software) in your repo should now have markup for two elements, `schema:SoftareSourceCode` and `bioschemas:ComputationalTool`. 
+The [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset) in your repo should now have markup for one element, a dataset.
 
-The markup corresponding to `schema:SoftwareSourceCode` is shown below. Note that the _source code_ is linked to the _release_ via the property `schema:targetProduct`. In the code below, we are using the _release_ `@id` to refer to it.
-
-```
-<script type="application/ld+json">
-  { 
-    "@context": "https://schema.org", 
-    "@type": "SoftwareSourceCode",
-    "@id": "https://github.com/zbmed-semtec/TREC-doc-2-doc-relevance",
-    "citation": "Talha M, Geist L, Fellerhof T, Ravinder R, Giraldo O, Rebholz-Schuhmann D, et al. TREC-doc-2-doc-relevance [Software source code]. GitHub; 2022.",
-    "name": "TREC-doc-2-doc-relevance",
-    "description": "This is the software source code facilitating the creation of a doc-2-doc relevance assessment on PMIDs used in the TREC 2005 Genomics track along with its metadata.",
-    "url": "https://github.com/zbmed-semtec/TREC-doc-2-doc-relevance#",
-    "targetProduct": { 
-      "@id": "https://doi.org/10.5281/zenodo.7341391"
-    },
-    "license": {
-      "@type": "CreativeWork",
-      "@id": "http://spdx.org/licenses/MIT",
-      "name": "MIT License", 
-      "url": "https://opensource.org/license/mit/"
-    },
-    "author": [
-      {"@id": "https://zbmed-semtec.github.io/previous_members/#muhammad-talha"},
-      {"@id": "https://orcid.org/0000-0002-2910-7982"},
-      {"@id": "https://orcid.org/0000-0002-8725-1317"},
-      {"@id": "https://orcid.org/0009-0004-4484-6283"},
-      {"@id": "https://orcid.org/0000-0003-2978-8922"},
-      {"@id": "https://orcid.org/0000-0002-1018-0370"},
-      {"@id": "https://orcid.org/0000-0003-3986-0510"}
-    ]
-  }
-<7script>
-```
-
-Note that we use a trick for the `@id` and the `schema:url` in our markup. Identifiers should be unique, global and permanent, like e.g., DOIs, and clearly identify the object they describe (in this case a source code). But, we do not have such a PID for our source code, we only have the GitHub URL for our repo. Now, if the `@id` is meant to identify a source code, we cannot use the exact same URL for the source code and for a "regular" url. We add `#` to the "regular" URL. If we do not, validators will see that the exact same URL is used to identify a source code and a "regular" URL but source codes and URLs are not the same thing so the validators might get confused. Using the exact same URL would be like saying that an animal is a cat at the same time that it is a dog, it cannot be. The best way to go would be getting an actual PID for your repo, e.g., via w3id.org
-
-And here you have the markup corresponding to the `bioschemas:ComputationalTool`
-
-```
-<script type="application/ld+json">
-  { 
-    "@context": "https://schema.org", 
-    "@type": "SoftwareApplication",
-    "@id": "https://doi.org/10.5281/zenodo.7341391",
-    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/ComputationalTool/1.0-RELEASE",
-    "identifier": "DOI:10.5281/zenodo.7341391",
-    "citation": "Talha M, Geist L, Fellerhof T, Ravinder R, Giraldo O, Rebholz-Schuhmann D, et al. TREC-doc-2-doc-relevance assessment interface. Zenodo; 2022. doi:10.5281/zenodo.7341391",
-    "name": "TREC-doc-2-doc-relevance assessment interface",
-    "description": "The code, data and docs at this release aim at facilitating the creation of a doc-2-doc relevance assessment on PMIDs used in the TREC 2005 Genomics track. A doc-2-doc relevance assessment takes one document as reference and assess a second document regarding its relevance to the reference one. This doc-2-doc collection will be used to evaluate the doc-2-doc recommendations approaches that we are working on.",
-    "url": "https://zenodo.org/records/7341391",
-    "softwareVersion": "1.0.0",
-    "datePublished": "2022-11-21",
-    "license": {
-      "@type": "CreativeWork",
-      "@id": "http://spdx.org/licenses/MIT",
-      "name": "MIT License", 
-      "url": "https://opensource.org/license/mit/"
-    },
-    "author": [
-      {"@id": "https://zbmed-semtec.github.io/previous_members/#muhammad-talha"},
-      {"@id": "https://orcid.org/0000-0002-2910-7982"},
-      {"@id": "https://orcid.org/0000-0002-8725-1317"},
-      {"@id": "https://orcid.org/0009-0004-4484-6283"},
-      {"@id": "https://orcid.org/0000-0003-2978-8922"},
-      {"@id": "https://orcid.org/0000-0002-1018-0370"},
-      {"@id": "https://orcid.org/0000-0003-3986-0510"}
-    ]
-  }
-</script>
-```
-
-The [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset) in your repo should now have markup only for one element, a dataset.
-
-```
+```html
 <script type="application/ld+json">
   
   {
     "@context": "https://schema.org", 
     "@type": "Dataset",
     "@id": "https://doi.org/10.5281/zenodo.7338056",
-    "conformsTo": "https://bioschemas.org/profiles/Dataset/1.1-DRAFT", 
+    "conformsTo": "https://bioschemas.org/profiles/Dataset/1.0-RELEASE", 
     "identifier": "DOI:10.5281/zenodo.7338056",
     "citation": "Giraldo O, Solanki D, Rebholz-Schuhmann D, Castro LJ. Fleiss kappa for doc-2-doc relevance assessment. Zenodo; 2022. doi:10.5281/zenodo.7338056",
     "name": "Fleiss kappa for doc-2-doc relevance assessment",
@@ -220,6 +148,9 @@ The [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tuto
   }
 </script>
 ```
+
+The [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software) in your repo should now have markup for two elements, `schema:SoftareSourceCode` and `bioschemas:ComputationalTool`. If you have additional time, see the [original lesson for an explanation](https://github.com/zbmed-semtec/bioschemas-ghpages-markup-tutorial). Note that there is a workaround being applied for the `@id` and `schema:url` properties, since they cannot have the same value.
+
 
 #### Using schema.org types
 If you use a schema.org type that has a corresponding Bioschemas profile, we recommend using the Bioschemas profile as it will help you focus on the most common and useful properties. However, if there is a type in schema.org that does not have a Bioschemas profile, we suggest finding examples on how others have used them for a case similar to yours.
