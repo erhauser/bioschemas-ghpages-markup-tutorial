@@ -173,7 +173,7 @@ And also [live deploys](https://bioschemas.org/developer/liveDeploys#nav-profile
 
 ![Live deploys](./images/livedploys.png)
 
-If you use Bioschemas markup on your website, you can also add it to the "live deploy" list. TODO
+If you use Bioschemas markup on your website, you can also add it to the "live deploy" list. 
 
 ### Visualizing the structured markup
 
@@ -280,7 +280,7 @@ Did you notice that nor the Schema Validator neither the Rich Results Test pay a
 ### Validating the pages against FAIR-Checker/Bioschemas validator
 Let's try now a validator specific for Bioschemas. Go to [FAIR-Checker](https://fair-checker.france-bioinformatique.fr/) and click on the blue button "Inspect". 
 
-On Step 1, add the URL for either the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html) or the [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset.html) and click on "Build Knowledge Graph"
+On Step 1, add the URL for either the [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset.html) and click on "Build Knowledge Graph"
 
 ![Inspector Step 1](./images/checker-step1.png)
 
@@ -297,7 +297,7 @@ Only Bioschemas profiles will be checked so, in this case `bioschemas:Computatio
 
 ![Result](./images/checker-result.png)
 
-We are missing some of the _recommended_ properties and the validator indicates this as _improvements_.
+We are missing some of the _recommended_ properties and the validator indicates this as _improvements_. Note, you may also see messages about required missing properties for the licence. We can ignore this for now. 
 
 ### Creating a Sitemap
 If you want to make it easier for machines to crawl your website (and this could be a good idea when you have markup and you want to enable easy integration into aggregators), consider adding a sitemap.xml to your website.
