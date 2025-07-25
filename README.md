@@ -65,10 +65,15 @@ In this tutorial we will cover:
 
 ### What are we aiming for?
 
-It may help you to understand the purpose of these activities if we should you what we are aiming to do. We are going to add Bioschemas markup to webpages that have been written about data, software, training materials, or many other kinds of research output. These webpages are hosted on the GitHub Pages platform, but they could be hosted anywhere.   
+It may help you to understand the purpose of these activities if we should you what we are aiming to do. 
+
+1. We are going to add Bioschemas markup to webpages that have been written about data, software, training materials, or many other kinds of research output. 
+2. These webpages are hosted on the GitHub Pages platform, but they could be hosted anywhere.
+3. We will then use tools to validate that we have added the markup correctly.
+4. The benefit of this activity is to make your research output more discoverable. 
 
 ### Creating this GitHub Page
-Let's start by forking [this repository](https://github.com/zbmed-semtec/bioschemas-ghpages-markup-tutorial) for your own purposes. Once forked, go to settings
+Let's start by forking [this repository](https://github.com/philreeddata/bioschemas-ghpages-markup-tutorial) for your own purposes. Once forked, go to settings
 
 ![Settings](./images/settings.png)
 
@@ -76,11 +81,14 @@ You will need to enable "Pages" on your forked repository, and select under Sour
 
 ![GitHub Pages](./images/pages.png)
 
-In a matter of minutes, your site will be live. The pages corresponding to the examples used in this tutorial are available at [https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/). They will have no markup to start with, you will add it in a moment.
+In a matter of minutes, your site will be live. The pages corresponding to the examples used in this tutorial are available at [https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/). They will have no markup to start with, you will add it in a moment.
 
 ![Published pages](./images/pages-published.png)
 
-Do not forget to get a local copy of your fork so you can make changes.
+Do not forget to get a local copy of your fork so you can make changes. There are several ways to do this:
+- Clone the repository on the command line with [Git](https://docs.github.com/en/get-started/git-basics/set-up-git)
+- Clone the repository with [GitHub Desktop](https://docs.github.com/en/desktop)
+- Use the [github.dev web-based editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor) (most suitable for Git beginners)
 
 ### Adding schema.org and Bioschemas markup
 We will add schema.org and Bioschemas markup corresponding to our example, code (software page) and data (dataset page) for our repo [TREC-doc-2-doc-relevance](https://github.com/zbmed-semtec/TREC-doc-2-doc-relevance). Right now those pages only have text, with the following steps you will get schema.org/Bioschemas markup embedded in your pages. 
@@ -101,9 +109,9 @@ For the rest of the markup, you need to see what the Bioschemas profile recommen
 
 To get the markup added to your pages, copy the content of [software](./software.md) to the [software page under /docs folder](./docs/software.md). Then copy the content of [dataset](./dataset.md) to the [dataset page under /docs folder](./docs/dataset.md)
 
-Have a look to the pages that you just created on your own GitHub pages, one for the [code and corresponding release](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/software), another for a [dataset created from data collected by the software](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/dataset). To see them working for your repo (that will now have the schemas.org/Bioschemas markup), you need to use `<your_user>/<your_repo>` instead of `zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial` on the html link `https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/dataset`.
+Have a look to the pages that you just created on your own GitHub pages, one for the [code and corresponding release](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software), another for a [dataset created from data collected by the software](https://zphilreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset). To see them working for your repo (that will now have the schemas.org/Bioschemas markup), you need to use `<your_user>/<your_repo>` instead of `zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial` on the html link `https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset`.
 
-The [software page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/software) in your repo should now have markup for two elements, `schema:SoftareSourceCode` and `bioschemas:ComputationalTool`. 
+The [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software) in your repo should now have markup for two elements, `schema:SoftareSourceCode` and `bioschemas:ComputationalTool`. 
 
 The markup corresponding to `schema:SoftwareSourceCode` is shown below. Note that the _source code_ is linked to the _release_ via the property `schema:targetProduct`. In the code below, we are using the _release_ `@id` to refer to it.
 
@@ -176,7 +184,7 @@ And here you have the markup corresponding to the `bioschemas:ComputationalTool`
 </script>
 ```
 
-The [dataset page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/dataset) in your repo should now have markup only for one element, a dataset.
+The [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset) in your repo should now have markup only for one element, a dataset.
 
 ```
 <script type="application/ld+json">
@@ -236,7 +244,7 @@ If you use Bioschemas markup on your website, you can also add it to the "live d
 
 Once the markup is in place and the page is live, you can use the developers tools in a browser to visualize the markup. You can use the `inspect` tool in e.g., Chrome, Firefox or Edge. 
 
-Go to the [software page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/software.html) and use the `inspect` tool for any element. You should see the HTML.
+Go to the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html) and use the `inspect` tool for any element. You should see the HTML.
 
 ![Inspect HTML](./images/inspect.png)
 
@@ -309,11 +317,11 @@ This is how we have embedded the Bioschemas markup on the page
 
 ### Validating the pages against the Schema Validator
 
-Go to [Schema validator](https://validator.schema.org/). Add the URL for either the [software page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/software.html) or the [dataset page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/dataset.html) and click on "Run Test"
+Go to [Schema validator](https://validator.schema.org/). Add the URL for either the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html) or the [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset.html) and click on "Run Test"
 
 ![Schema validator](./images/schema-validator-url.png)
 
-In the case of the [software page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/software.html), it identifies and validates the two upper objects corresponding to `schema:WebPage` and `schema:SoftwareSourceCode` but it does not find `bioschemas:ComputationalTool` (which corresponds to a `schema:SoftwareApplication`)
+In the case of the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html), it identifies and validates the two upper objects corresponding to `schema:WebPage` and `schema:SoftwareSourceCode` but it does not find `bioschemas:ComputationalTool` (which corresponds to a `schema:SoftwareApplication`)
 
 You can run the test again with a "Code Snippet" by copying and pasting the code embedded on the page, the results will be the same. However, if you try and validate a code snippet containing only one element, the inner element `bioschemas:ComputationalTool`, the Schema Validator will identify and validate it (tested on 2024-02-05).
 
@@ -324,11 +332,11 @@ There is another schema.org validator, currently the one recommended by Google. 
 
 ![Rich test](./images/rich-test.png)
 
-If you try the [software page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/software.html), it will identify some errors with `schema:SoftwareApplication`. Yes, it does identify the inner element! As there is an error, only the error will be shown, nothing regarding the other elements. It looks like our `bioschemas:ComputationalTool` is missing some important elements (for Google, and you will see also for Bioschemas).
+If you try the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html), it will identify some errors with `schema:SoftwareApplication`. Yes, it does identify the inner element! As there is an error, only the error will be shown, nothing regarding the other elements. It looks like our `bioschemas:ComputationalTool` is missing some important elements (for Google, and you will see also for Bioschemas).
 
 ![Rich test result](./images/rich-test-result.png)
 
-If you try the [dataset page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/dataset.html), one correct element will be identified. 
+If you try the [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset.html), one correct element will be identified. 
 
 ![Rich test result](./images/rich-test-result-2.png)
 
@@ -337,7 +345,7 @@ Did you notice that nor the Schema Validator neither the Rich Results Test pay a
 ### Validating the pages against FAIR-Checker/Bioschemas validator
 Let's try now a validator specific for Bioschemas. Go to [FAIR-Checker](https://fair-checker.france-bioinformatique.fr/) and click on the blue button "Inspect". 
 
-On Step 1, add the URL for either the [software page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/software.html) or the [dataset page](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/dataset.html) and click on "Build Knowledge Graph"
+On Step 1, add the URL for either the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html) or the [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset.html) and click on "Build Knowledge Graph"
 
 ![Inspector Step 1](./images/checker-step1.png)
 
@@ -359,7 +367,7 @@ We are missing some of the _recommended_ properties and the validator indicates 
 ### Creating a Sitemap
 If you want to make it easier for machines to crawl your website (and this could be a good idea when you have markup and you want to enable easy integration into aggregators), consider adding a sitemap.xml to your website.
 
-We have used [XML-Sitemaps](https://www.xml-sitemaps.com/) to create [the one for the GitHub pages used in this tutorial](https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/sitemap.xml). 
+We have used [XML-Sitemaps](https://www.xml-sitemaps.com/) to create [the one for the GitHub pages used in this tutorial](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/sitemap.xml). 
 
 Our sitemap looks like
 
@@ -372,17 +380,17 @@ Our sitemap looks like
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
   <url>
-    <loc>https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/</loc>
+    <loc>https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/</loc>
     <lastmod>2024-02-05T14:31:07+00:00</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/software.html</loc>
+    <loc>https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html</loc>
     <lastmod>2024-02-05T14:31:07+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial/dataset.html</loc>
+    <loc>https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset.html</loc>
     <lastmod>2024-02-05T14:31:07+00:00</lastmod>
     <priority>0.80</priority>
   </url>
