@@ -252,30 +252,19 @@ This is how we have embedded the Bioschemas markup on the page
 
 ### Validating the pages against the Schema Validator
 
-Go to [Schema validator](https://validator.schema.org/). Add the URL for either the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html) or the [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset.html) and click on "Run Test"
+Go to [Schema validator](https://validator.schema.org/). Add the URL for the [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset.html) and click on "Run test".
 
 ![Schema validator](./images/schema-validator-url.png)
 
-In the case of the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html), it identifies and validates the two upper objects corresponding to `schema:WebPage` and `schema:SoftwareSourceCode` but it does not find `bioschemas:ComputationalTool` (which corresponds to a `schema:SoftwareApplication`)
+It identifies and validates the two upper objects corresponding to `schema:WebPage` and `schema:Dataset`. Any inner elements are not seen (applies to the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html)).
 
-You can run the test again with a "Code Snippet" by copying and pasting the code embedded on the page, the results will be the same. However, if you try and validate a code snippet containing only one element, the inner element `bioschemas:ComputationalTool`, the Schema Validator will identify and validate it (tested on 2024-02-05).
+You can run the test again with a "Code Snippet" by copying and pasting the code embedded on the page, the results will be the same. However, if you try and validate a code snippet containing only one element, an inner element, the Schema Validator will identify and validate it (tested on 2024-02-05). See the [original lesson](https://github.com/zbmed-semtec/bioschemas-ghpages-markup-tutorial) for details, if you have time.
 
 ![Unique object validation](./images/schema-validator-result-2.png)
 
 ### Validating the pages against the Rich Results Test
-There is another schema.org validator, currently the one recommended by Google. Go to [Rich Results Test](https://search.google.com/test/rich-results) and use the same URL as before, and click "Test URL".
+There is another schema.org validator, currently the one recommended by Google. See the [original lesson](https://github.com/zbmed-semtec/bioschemas-ghpages-markup-tutorial) for details, if you have time.
 
-![Rich test](./images/rich-test.png)
-
-If you try the [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software.html), it will identify some errors with `schema:SoftwareApplication`. Yes, it does identify the inner element! As there is an error, only the error will be shown, nothing regarding the other elements. It looks like our `bioschemas:ComputationalTool` is missing some important elements (for Google, and you will see also for Bioschemas).
-
-![Rich test result](./images/rich-test-result.png)
-
-If you try the [dataset page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset.html), one correct element will be identified. 
-
-![Rich test result](./images/rich-test-result-2.png)
-
-Did you notice that nor the Schema Validator neither the Rich Results Test pay attention to the `schema:WebPage` element?
 
 ### Validating the pages against FAIR-Checker/Bioschemas validator
 Let's try now a validator specific for Bioschemas. Go to [FAIR-Checker](https://fair-checker.france-bioinformatique.fr/) and click on the blue button "Inspect". 
@@ -334,7 +323,7 @@ Our sitemap looks like
 
 ### Try it out
 
-Try and modify the markup to describe a source code of your own. If you have not created a release yet, use only `schema:SoftwareSourceCode`. If you have a release or if you prefer, you can omit the markup for the source code and use only `bioschemas:ComputationalTool` for your release. Or you can provide some markup describing a dataset you have created for this you would use `bioschemas:Dataset`. 
+Try and modify the markup describing a dataset you have created using `bioschemas:Dataset`. You can also describe a source code of your own. If you have not created a release yet, use only `schema:SoftwareSourceCode`. If you have a release or if you prefer, you can omit the markup for the source code and use only `bioschemas:ComputationalTool` for your release. See the [original lesson](https://github.com/zbmed-semtec/bioschemas-ghpages-markup-tutorial) for more software details, if you have time.
 
 Are you interested in using Bioschemas markup for real on your web pages? [Join the community](https://bioschemas.org/community/howtojoin), you can send questions to the mailing list or more informally on the Slack channel.
 
@@ -344,7 +333,7 @@ We covered a manual addition of schema.org and Bioschemas markup to GitHub pages
 We also briefly mentioned sitemaps with much of a context. We invite to get more information on what they are and why they are useful.
 
 ## Acknowledgements
-This tutorial is based on [bioschemas-github-markup-example](https://github.com/zbmed-semtec/bioschemas-github-markup-example) and [Adding schema.org to a GitHub Pages site](https://bioschemas.org/tutorials/howto/howto_add_github).
+This tutorial is based on [bioschemas-github-markup-example](https://github.com/zbmed-semtec/bioschemas-github-markup-example) and [Adding schema.org to a GitHub Pages site](https://bioschemas.org/tutorials/howto/howto_add_github). It was modified and shortened by Phil Reed for the [Improving FAIRability of your research outcomes with RO-Crates and Bioschemas](https://philreeddata.github.io/acmrep25/) tutorial delivered at [ACM REP '25](https://acm-rep.github.io/2025/), Vancouver, 2025-07-29. 
 
 LJC has received fundings from the [German Research Foundation (DFG)](https://www.dfg.de/en) via the grant for NFDI4DataScience No. [460234259](https://gepris.dfg.de/gepris/projekt/460234259)
 
