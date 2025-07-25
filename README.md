@@ -77,7 +77,10 @@ Let's start by forking [this repository](https://github.com/philreeddata/biosche
 
 ![Settings](./images/settings.png)
 
-You will need to enable "Pages" on your forked repository, and select under Source `Deploy from a branch`. Use the `main` branch and the folder `/docs`. `Save` your changes.
+1. You will need to enable "Pages" on your forked repository.
+2. Select under Source `Deploy from a branch`. 
+3. Use the `main` branch and the folder `/docs`. 
+4. `Save` your changes.
 
 ![GitHub Pages](./images/pages.png)
 
@@ -109,7 +112,7 @@ For the rest of the markup, you need to see what the Bioschemas profile recommen
 
 To get the markup added to your pages, copy the content of [software](./software.md) to the [software page under /docs folder](./docs/software.md). Then copy the content of [dataset](./dataset.md) to the [dataset page under /docs folder](./docs/dataset.md)
 
-Have a look to the pages that you just created on your own GitHub pages, one for the [code and corresponding release](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software), another for a [dataset created from data collected by the software](https://zphilreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset). To see them working for your repo (that will now have the schemas.org/Bioschemas markup), you need to use `<your_user>/<your_repo>` instead of `zbmed-semtec.github.io/bioschemas-ghpages-markup-tutorial` on the html link `https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset`.
+Have a look to the pages that you just created on your own GitHub pages, one for the [code and corresponding release](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software), another for a [dataset created from data collected by the software](https://zphilreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset). To see them working for your repo (that will now have the schemas.org/Bioschemas markup), you need to use `<your_user>/<your_repo>` instead of `philreeddata.github.io/bioschemas-ghpages-markup-tutorial` on the html link `https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/dataset`.
 
 The [software page](https://philreeddata.github.io/bioschemas-ghpages-markup-tutorial/software) in your repo should now have markup for two elements, `schema:SoftareSourceCode` and `bioschemas:ComputationalTool`. 
 
