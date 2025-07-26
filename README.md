@@ -32,7 +32,7 @@ These GitHub pages include a page describing a [software](./software.md) and a p
 
 <img src="./icons/calendar.svg" width="16" height="16"/> __Published__ 2024-02-05
 
-<img src="./icons/pen-to-square.svg" width="16" height="16"/> __Latest modification__ 2025-07-20
+<img src="./icons/pen-to-square.svg" width="16" height="16"/> __Latest modification__ 2025-07-26
 
 <img src="./icons/scale-balance.svg" width="16" height="16"/> __License__ [CC-By 4.0](https://spdx.org/licenses/CC-BY-4.0)
 
@@ -71,7 +71,7 @@ It may help you to understand the purpose of these activities if we should you w
 1. We are going to add Bioschemas markup to webpages that have been written about data, software, training materials, or many other kinds of research output. 
 2. These webpages are hosted on the GitHub Pages platform, but they could be hosted anywhere.
 3. We will then use tools to validate that we have added the markup correctly.
-4. The benefit of this activity is to make your research output more discoverable. 
+4. After completing this tutorial, you will be able to make your research output more discoverable. 
 
 ### Creating this GitHub Page
 Let's start by forking [this repository](https://github.com/philreeddata/bioschemas-ghpages-markup-tutorial) for your own purposes. Once forked, go to settings
